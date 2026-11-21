@@ -12,11 +12,3 @@ export function Page({ title, action, children }: { title: string; action?: Reac
   )
 }
 
-export function ComingSoon({ phase, children }: { phase: number; children: ReactNode }) {
-  return (
-    <div className="rounded-2xl border border-border bg-surface p-5 text-muted">
-      <p>{children}</p>
-      <p className="mt-3 text-xs uppercase tracking-wide">Arrive en phase {phase}</p>
-    </div>
-  )
-}

@@ -20,7 +20,7 @@ export default defineConfig(({ mode }) => ({
     // Copie la police Bravura et les banques de sons, configure workers et worklets d'alphaTab.
     alphaTab(),
     VitePWA({
-      registerType: 'autoUpdate',
+      registerType: 'prompt', // la mise à jour est proposée, jamais imposée en pleine leçon
       injectRegister: false, // enregistrement fait dans src/app/pwa.ts
       includeAssets: ['favicon.svg', 'apple-touch-icon-180x180.png'],
       manifest: {

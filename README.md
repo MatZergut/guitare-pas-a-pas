@@ -37,6 +37,25 @@ src/
   content/    contenu des leçons (JSON) et morceaux intégrés (alphaTex), validés par les tests
   components/player/ lecteur de tablature alphaTab (chargé à la demande)
 
+## Déploiement
+
+Chaque push sur `main` déclenche `.github/workflows/deploy.yml` :
+typage → tests unitaires → parcours Playwright (dont accordeur, leçons et analyse de jeu
+avec un faux micro Chrome) → build → publication sur GitHub Pages (HTTPS, requis pour le micro).
+Rien n'est publié si un test échoue. Les pull requests lancent seulement les tests.
+
+Adresse : https://matzergut.github.io/guitare-pas-a-pas/
+
+Une nouvelle version est proposée par un bandeau « Mettre à jour » (jamais imposée en pleine leçon).
+
+## Données et vie privée
+
+Tout reste sur l'appareil (IndexedDB) : progression, scores, temps de pratique, morceaux importés.
+Le son du micro est analysé localement (pitchy pour l'accordeur et les leçons, Basic Pitch dans un
+Web Worker pour l'analyse de jeu) et n'est jamais enregistré ni envoyé.
+L'onglet Progrès permet d'exporter un fichier de sauvegarde et de le restaurer (fusion, sans rien
+effacer) ; la latence calibrée, propre à chaque téléphone, n'est pas transférée.
+
 ## Contenu
 
 Les morceaux intégrés sont uniquement des œuvres du domaine public (airs traditionnels,

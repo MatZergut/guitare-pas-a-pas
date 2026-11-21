@@ -1,6 +1,7 @@
 import { synth } from '@coderline/alphatab'
 import { useCallback, useEffect, useRef, useState, type ReactNode } from 'react'
 import { useNavigate } from 'react-router'
+import { usePracticeTimer } from '../../app/usePracticeTimer'
 import { useWakeLock } from '../../app/useWakeLock'
 import { clampTempo, loopLabel, tapBar, TEMPO_MAX, TEMPO_MIN, TEMPO_STEP, type LoopSelection } from '../../lib/songs/loop'
 import { barTickRange } from '../../lib/songs/score'
@@ -60,6 +61,7 @@ export function SongPlayer({ songId, title, subtitle, source, calibration = fals
   const perf = usePerformance({ api, score: info.score, trackIndex: info.trackIndex, songId, tempo, restorePlayback: applyPlayback })
   const busy = perf.phase.kind === 'recording' || perf.phase.kind === 'analyzing'
   useWakeLock(info.playing || busy)
+  usePracticeTimer(!calibration && (info.playing || busy))
 
   // Boucle A–B : toucher une mesure en mode boucle
   const loopModeRef = useRef(loopMode)

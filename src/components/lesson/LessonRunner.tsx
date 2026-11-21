@@ -2,6 +2,7 @@ import { useCallback, useEffect, useMemo, useReducer, useRef, useState } from 'r
 import { useNavigate } from 'react-router'
 import { playReference } from '../../audio/referenceTone'
 import { useMicrophone } from '../../audio/useMicrophone'
+import { usePracticeTimer } from '../../app/usePracticeTimer'
 import { useWakeLock } from '../../app/useWakeLock'
 import { db } from '../../db/db'
 import { hintFor, type MatchEvent } from '../../lib/lessons/matcher'
@@ -61,6 +62,7 @@ function Run({ lesson, next, items, onRetry }: { lesson: Lesson; next?: Lesson; 
   const ear = useNoteListener(a4Hz, onEvent)
   const mic = useMicrophone(ear.onFrame)
   useWakeLock(!state.done)
+  usePracticeTimer(!state.done)
 
   // Cible du micro : seulement quand on attend une note jouée.
   const targetMidi = listening && (item.kind === 'play' || item.kind === 'find') ? item.midi : null

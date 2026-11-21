@@ -2,6 +2,7 @@ import { lazy, Suspense } from 'react'
 import { Navigate, Outlet, Route, Routes } from 'react-router'
 import { TabBar } from '../components/TabBar'
 import { InstallBanner } from '../components/InstallBanner'
+import { UpdateBanner } from '../components/UpdateBanner'
 import TunerPage from '../pages/TunerPage'
 import LearnPage from '../pages/LearnPage'
 import SongsPage from '../pages/SongsPage'
@@ -15,6 +16,7 @@ const CalibrationPage = lazy(() => import('../pages/CalibrationPage'))
 function Layout() {
   return (
     <div className="min-h-full pb-[calc(var(--spacing-tabbar)+env(safe-area-inset-bottom)+1rem)]">
+      <UpdateBanner />
       <InstallBanner />
       <main><Outlet /></main>
       <TabBar />

@@ -39,6 +39,13 @@ export interface PerformanceRecord {
   playedAt: number
 }
 
+/** Temps de pratique cumulé par jour (heure locale). */
+export interface PracticeDay {
+  /** « AAAA-MM-JJ » */
+  day: string
+  seconds: number
+}
+
 /** Réglages clé/valeur (diapason, accordage, latence calibrée de cet appareil…). */
 export interface SettingRow {
   key: string
@@ -50,6 +57,7 @@ export class GuitareDB extends Dexie {
   songs!: EntityTable<ImportedSong, 'id'>
   performances!: EntityTable<PerformanceRecord, 'id'>
   settings!: EntityTable<SettingRow, 'key'>
+  practice!: EntityTable<PracticeDay, 'day'>
 
   constructor(name = 'guitare-pas-a-pas') {
     super(name)
@@ -59,6 +67,8 @@ export class GuitareDB extends Dexie {
       performances: '++id, songId, playedAt, [songId+playedAt]',
       settings: 'key',
     })
+    // v2 : temps de pratique par jour (onglet Progrès)
+    this.version(2).stores({ practice: 'day' })
   }
 }
 
