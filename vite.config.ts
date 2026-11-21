@@ -7,7 +7,11 @@ import { VitePWA } from 'vite-plugin-pwa'
 
 // `--mode https` : certificat auto-signé pour tester le micro sur le téléphone
 // via le réseau local (getUserMedia exige un contexte sécurisé).
+// BASE_PATH=/guitare-pas-a-pas/ pour GitHub Pages ; « / » en local.
+const base = process.env.BASE_PATH ?? '/'
+
 export default defineConfig(({ mode }) => ({
+  base,
   plugins: [
     react(),
     tailwindcss(),
@@ -17,14 +21,14 @@ export default defineConfig(({ mode }) => ({
       injectRegister: false, // enregistrement fait dans src/app/pwa.ts
       includeAssets: ['favicon.svg', 'apple-touch-icon-180x180.png'],
       manifest: {
-        id: '/',
+        id: base,
         name: 'GuitarePasÀPas',
         short_name: 'GuitarePasÀPas',
         description: 'Apprendre la guitare pas à pas : accordeur, leçons, morceaux et analyse de jeu.',
         lang: 'fr',
         dir: 'ltr',
-        start_url: '/',
-        scope: '/',
+        start_url: base,
+        scope: base,
         display: 'standalone',
         // « any » : portrait par défaut dans l'UI, mais la tablature doit
         // pouvoir passer en paysage quand on tourne le téléphone.
@@ -41,7 +45,7 @@ export default defineConfig(({ mode }) => ({
       },
       workbox: {
         globPatterns: ['**/*.{js,css,html,svg,png,ico,woff2,json,wasm}'],
-        navigateFallback: 'index.html',
+        navigateFallback: `${base}index.html`,
         cleanupOutdatedCaches: true,
       },
       devOptions: { enabled: false },

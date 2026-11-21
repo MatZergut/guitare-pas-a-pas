@@ -13,6 +13,7 @@ Tout le traitement audio se fait sur l'appareil.
 | `npm run preview:phone` | Build prévisualisé en HTTPS sur le réseau local (test PWA/hors ligne) |
 | `npm test` | Tests unitaires (Vitest) |
 | `npm run e2e` | Parcours utilisateur (Playwright, profils Pixel 7 et 360 px) |
+| `BASE_PATH=/guitare-pas-a-pas/ npm run build` | Build pour GitHub Pages (fait automatiquement à chaque push sur `main`) |
 | `npm run icons` | Régénère les icônes depuis `public/favicon.svg` |
 
 ## Structure
