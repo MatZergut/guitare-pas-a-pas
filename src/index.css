@@ -29,6 +29,15 @@
   }
 }
 
+/* Téléphone tourné en paysage : peu de hauteur, on compacte l'interface. */
+@custom-variant short (@media (orientation: landscape) and (max-height: 500px));
+
+/* Curseurs et sélection d'alphaTab aux couleurs de l'appli */
+.tab-host .at-cursor-bar { background: color-mix(in srgb, var(--c-accent) 12%, transparent); }
+.tab-host .at-cursor-beat { background: var(--c-accent); width: 3px; }
+.tab-host .at-highlight * { fill: var(--c-accent); stroke: var(--c-accent); }
+.tab-host .at-selection div { background: color-mix(in srgb, var(--c-accent) 22%, transparent); }
+
 @theme {
   --color-bg: var(--c-bg);
   --color-surface: var(--c-surface);

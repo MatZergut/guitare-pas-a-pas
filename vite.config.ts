@@ -4,6 +4,7 @@ import react from '@vitejs/plugin-react'
 import tailwindcss from '@tailwindcss/vite'
 import basicSsl from '@vitejs/plugin-basic-ssl'
 import { VitePWA } from 'vite-plugin-pwa'
+import { alphaTab } from '@coderline/alphatab-vite'
 
 // `--mode https` : certificat auto-signé pour tester le micro sur le téléphone
 // via le réseau local (getUserMedia exige un contexte sécurisé).
@@ -16,6 +17,8 @@ export default defineConfig(({ mode }) => ({
     react(),
     tailwindcss(),
     mode === 'https' && basicSsl(),
+    // Copie la police Bravura et les banques de sons, configure workers et worklets d'alphaTab.
+    alphaTab(),
     VitePWA({
       registerType: 'autoUpdate',
       injectRegister: false, // enregistrement fait dans src/app/pwa.ts
@@ -44,7 +47,10 @@ export default defineConfig(({ mode }) => ({
         ],
       },
       workbox: {
-        globPatterns: ['**/*.{js,css,html,svg,png,ico,woff2,json,wasm}'],
+        // Hors ligne : on garde la banque de sons allégée (sf3) et la police woff2, pas les variantes.
+        globPatterns: ['**/*.{js,mjs,css,html,svg,png,ico,woff2,json,wasm,sf3}'],
+        globIgnores: ['**/font/Bravura.{svg,eot,otf,woff}', '**/soundfont/*.sf2'],
+        maximumFileSizeToCacheInBytes: 5 * 1024 * 1024,
         navigateFallback: `${base}index.html`,
         cleanupOutdatedCaches: true,
       },

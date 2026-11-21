@@ -30,6 +30,14 @@ src/
   lib/tuner/  détection, lissage, logique de l'accordeur (pur, testé)
   lib/lessons/ déroulé des leçons, jeux, reconnaissance de note, progression (pur, testé)
   lib/synth/  son de référence (Karplus-Strong)
-  content/    contenu des leçons en JSON (validé par les tests)
+  lib/songs/  partitions : durées des mesures, boucle A–B, tablature calculée, import (pur, testé)
+  content/    contenu des leçons (JSON) et morceaux intégrés (alphaTex), validés par les tests
+  components/player/ lecteur de tablature alphaTab (chargé à la demande)
+
+## Contenu
+
+Les morceaux intégrés sont uniquement des œuvres du domaine public (airs traditionnels,
+classiques) ou des créations originales, transcrits en alphaTex. Aucune tablature protégée
+n'est incluse : les morceaux récents s'ajoutent par import de fichiers par l'utilisateur.
 e2e/          tests Playwright
 ```
