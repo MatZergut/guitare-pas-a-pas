@@ -63,9 +63,9 @@ function Run({ lesson, next, items, onRetry }: { lesson: Lesson; next?: Lesson; 
   useWakeLock(!state.done)
 
   // Cible du micro : seulement quand on attend une note jouée.
-  useEffect(() => {
-    ear.setTarget(listening && (item.kind === 'play' || item.kind === 'find') ? item.midi : null)
-  }, [listening, item, ear])
+  const targetMidi = listening && (item.kind === 'play' || item.kind === 'find') ? item.midi : null
+  const { setTarget } = ear
+  useEffect(() => setTarget(targetMidi), [targetMidi, state.index, setTarget])
 
   useEffect(() => setMessage(null), [state.index])
 

@@ -40,6 +40,8 @@ export class NoteMatcher {
   }
 
   setTarget(midi: number | null, a4Hz = 440): void {
+    // Redéfinir la même cible ne doit pas remettre la détection à zéro.
+    if (midi === this.target && a4Hz === this.a4) return
     this.ignoreMidi = this.candidate
     this.target = midi
     this.a4 = a4Hz

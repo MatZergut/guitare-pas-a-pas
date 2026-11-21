@@ -60,6 +60,14 @@ describe('NoteMatcher', () => {
     expect(feed(m, hz(45), 1000, 300)).toEqual([{ type: 'match' }])
   })
 
+  it('redéfinir la même cible ne remet pas la détection à zéro', () => {
+    const m = new NoteMatcher()
+    m.setTarget(45)
+    feed(m, hz(45), 0, 100)
+    m.setTarget(45)
+    expect(feed(m, hz(45), 100, 100)).toEqual([{ type: 'match' }])
+  })
+
   it('le silence réarme la détection', () => {
     const m = new NoteMatcher()
     m.setTarget(45)
