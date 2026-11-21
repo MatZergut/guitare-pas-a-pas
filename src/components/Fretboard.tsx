@@ -16,13 +16,15 @@ interface Props {
   marks?: Mark[]
   /** Corde à mettre en évidence (jeu « Trouve la note »). */
   highlightString?: StringNumber
+  /** Masque le nom des cordes (quand il donnerait la réponse). */
+  hideStringNames?: boolean
   /** Texte décrivant le manche pour les lecteurs d'écran. */
   description?: string
 }
 
 const W = 340
 const LEFT = 48 // place pour les numéros de case (hors des repères de la 6e corde)
-const RIGHT = 14
+const RIGHT = 22 // la pastille de la 1re corde ne doit pas être coupée
 const OPEN_H = 44
 const INLAYS = [3, 5, 7, 9]
 
@@ -37,7 +39,7 @@ const FILL: Record<MarkTone, string> = {
  * Manche vertical, vu comme un diagramme d'accords : 6e corde à gauche,
  * 1re à droite, sillet en haut. Rendu SVG, net à toutes les tailles.
  */
-export function Fretboard({ frets, marks = [], highlightString, description }: Props) {
+export function Fretboard({ frets, marks = [], highlightString, hideStringNames = false, description }: Props) {
   const rowH = frets <= 5 ? 62 : 38
   const H = OPEN_H + frets * rowH + 30
   const gap = (W - LEFT - RIGHT) / 5
@@ -73,10 +75,12 @@ export function Fretboard({ frets, marks = [], highlightString, description }: P
           <g key={s}>
             <line x1={sx(s)} x2={sx(s)} y1={OPEN_H} y2={OPEN_H + frets * rowH}
               stroke={hl ? 'var(--c-accent)' : 'var(--c-muted)'} strokeWidth={(hl ? 2 : 0) + 0.8 + s * 0.35} />
-            <text x={sx(s)} y={H - 8} textAnchor="middle" fontSize={12}
-              fill={hl ? 'var(--c-accent)' : 'var(--c-muted)'} fontWeight={hl ? 700 : 400}>
-              {midiToNoteName(openStringMidi(s)).fr}
-            </text>
+            {!hideStringNames && (
+              <text x={sx(s)} y={H - 8} textAnchor="middle" fontSize={12} data-testid="string-name"
+                fill={hl ? 'var(--c-accent)' : 'var(--c-muted)'} fontWeight={hl ? 700 : 400}>
+                {midiToNoteName(openStringMidi(s)).fr}
+              </text>
+            )}
           </g>
         )
       })}

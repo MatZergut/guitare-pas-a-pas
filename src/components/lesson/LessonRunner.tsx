@@ -160,6 +160,8 @@ function ItemView({ item, state, message, heard, micGate, micOk, onNext, onSkip,
   }
 
   const note = positionNote(item.position)
+  // Corde à vide : le nom de la corde EST la réponse, on le cache tant qu'on n'a pas répondu.
+  const openQuiz = item.kind !== 'play' && item.position.fret === 0 && !feedback
   const name = formatNote(note)
   const where = `${stringLabel(item.position.string)}${item.position.fret === 0 ? ', à vide' : `, case ${item.position.fret}`}`
 
@@ -197,13 +199,18 @@ function ItemView({ item, state, message, heard, micGate, micOk, onNext, onSkip,
           <h2 className="text-2xl font-bold" data-testid="prompt">Quelle est cette note ?</h2>
         )}
         <p className="text-muted">
-          {item.kind === 'play' ? where : item.kind === 'find' ? `sur la ${stringLabel(item.position.string)}` : item.text}
+          {item.kind === 'play'
+            ? where
+            : item.kind === 'find'
+              ? openQuiz ? 'Joue la bonne corde, à vide' : `sur la ${stringLabel(item.position.string)}`
+              : item.text}
         </p>
       </div>
 
       <Fretboard frets={item.frets} marks={marks}
-        highlightString={item.kind === 'find' ? item.position.string : undefined}
-        description={item.kind === 'name' && !feedback ? 'Manche : une note est indiquée' : `Manche : ${where}`} />
+        highlightString={item.kind === 'find' && !openQuiz ? item.position.string : undefined}
+        hideStringNames={openQuiz}
+        description={openQuiz || (item.kind === 'name' && !feedback) ? 'Manche : une note est indiquée' : `Manche : ${where}`} />
 
       <div className="min-h-16" aria-live="polite">
         {feedbackText ? (

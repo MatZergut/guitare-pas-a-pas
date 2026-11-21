@@ -56,6 +56,24 @@ describe('makeChoices', () => {
   })
 })
 
+describe('makeChoices — cordes à vide', () => {
+  it('ne propose que des noms de cordes à vide', () => {
+    const open = new Set([4, 9, 2, 7, 11]) // Mi La Ré Sol Si
+    for (let seed = 1; seed < 30; seed++) {
+      const c = makeChoices(45, false, seededRandom(seed), open)
+      expect(c.every((x) => open.has(x.pc))).toBe(true)
+      expect(c.some((x) => x.fr === 'La')).toBe(true)
+    }
+  })
+  it('via buildRun, la leçon des cordes à vide n’a aucun dièse dans les choix', () => {
+    const l: Lesson = { id: 'o', title: 'o', summary: '', minutes: 3, steps: [
+      { type: 'name', title: 'n', pool: { strings: [6, 5, 4, 3, 2, 1], frets: [0, 0] }, rounds: 12 }] }
+    for (const it of buildRun(l, 9)) {
+      if (it.kind === 'name') expect(it.choices.every((c) => !c.fr.includes('♯'))).toBe(true)
+    }
+  })
+})
+
 describe('runReducer', () => {
   const items = buildRun(lesson, 1)
   const step = (s: RunState, ...actions: Parameters<typeof runReducer>[2][]) =>

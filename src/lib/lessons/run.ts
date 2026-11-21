@@ -50,9 +50,17 @@ export function drawRounds(pool: QuizPool, rounds: number, rand: () => number, p
   return out
 }
 
-export function makeChoices(midi: number, naturalOnly: boolean, rand: () => number): Choice[] {
+/**
+ * 4 noms de notes dont la bonne réponse. Les leurres sont pris parmi les notes
+ * possibles de l'exercice (`allowedPcs`) : pour les cordes à vide, Mi La Ré Sol Si,
+ * pas des dièses impossibles qu'on éliminerait d'office.
+ */
+export function makeChoices(midi: number, naturalOnly: boolean, rand: () => number, allowedPcs?: ReadonlySet<number>): Choice[] {
   const pc = ((midi % 12) + 12) % 12
-  const candidates = Array.from({ length: 12 }, (_, i) => i).filter((c) => c !== pc && (!naturalOnly || isNatural(c)))
+  const usePool = allowedPcs && allowedPcs.size >= NUM_CHOICES
+  const candidates = Array.from({ length: 12 }, (_, i) => i).filter(
+    (c) => c !== pc && (usePool ? allowedPcs.has(c) : !naturalOnly || isNatural(c)),
+  )
   const distractors = shuffle(candidates, rand).slice(0, NUM_CHOICES - 1)
   // Ordre de la gamme (Do Ré Mi…) : plus facile à parcourir que du hasard.
   return [pc, ...distractors].sort((a, b) => a - b).map(choiceFor)
@@ -79,6 +87,7 @@ export function buildRun(lesson: Lesson, seed = Date.now()): RunItem[] {
       case 'find':
       case 'name': {
         const positions = drawRounds(step.pool, step.rounds, rand, lastMidi)
+        const poolPcs = new Set(poolPositions(step.pool).map((p) => positionToMidi(p) % 12))
         const frets = step.frets ?? fretsToShow(poolPositions(step.pool))
         for (const position of positions) {
           const midi = positionToMidi(position)
@@ -86,7 +95,7 @@ export function buildRun(lesson: Lesson, seed = Date.now()): RunItem[] {
           if (step.type === 'find') {
             items.push({ kind: 'find', stepIndex, title: step.title, text: step.text, position, midi, frets })
           } else {
-            const choices = makeChoices(midi, !!step.pool.naturalOnly, rand)
+            const choices = makeChoices(midi, !!step.pool.naturalOnly, rand, poolPcs)
             items.push({ kind: 'name', stepIndex, title: step.title, text: step.text, position, midi, frets, choices })
           }
         }
