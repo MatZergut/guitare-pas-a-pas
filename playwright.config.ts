@@ -12,7 +12,7 @@ export default defineConfig({
   projects: [
     // Profil Android milieu de gamme, largeur 412 px.
     { name: 'android', use: { ...devices['Pixel 7'] } },
-    { name: 'petit-ecran', testIgnore: '**/tuner.spec.ts', use: { ...devices['Galaxy S9+'], viewport: { width: 360, height: 740 } } },
+    { name: 'petit-ecran', testIgnore: ['**/tuner.spec.ts', '**/lessons.spec.ts'], use: { ...devices['Galaxy S9+'], viewport: { width: 360, height: 740 } } },
   ],
   webServer: {
     command: 'npm run build && npm run preview -- --port 4173 --strictPort',

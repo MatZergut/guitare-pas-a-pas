@@ -6,6 +6,8 @@ export interface LessonProgress {
   /** Meilleur taux de réussite, 0..1. La leçon suivante se débloque à 0.8. */
   bestScore: number
   attempts: number
+  /** Meilleure série de bonnes réponses d’affilée. */
+  bestStreak?: number
   completedAt?: number
   updatedAt: number
 }

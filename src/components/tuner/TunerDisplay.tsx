@@ -1,5 +1,5 @@
 import { midiToNoteName } from '../../lib/music/notes'
-import { stringNumber, type Tuning } from '../../lib/music/tunings'
+import { ordinal, stringNumber, type Tuning } from '../../lib/music/tunings'
 import { instruction, SCALE_CENTS, type TunerReading } from '../../lib/tuner/tuner'
 import { TunerBar } from './TunerBar'
 
@@ -22,7 +22,7 @@ export function TunerDisplay({ reading, tuning, idleString, allTuned }: Props) {
 
   return (
     <div className="flex flex-col items-center gap-3" data-status={reading?.status ?? 'idle'} data-testid="tuner-display">
-      <p className="h-5 text-sm text-muted">{stringIndex !== null ? `${stringNumber(stringIndex)}e corde` : ''}</p>
+      <p className="h-5 text-sm text-muted">{stringIndex !== null ? `${ordinal(stringNumber(stringIndex))} corde` : ''}</p>
       <p className={`flex items-baseline gap-2 font-bold leading-none transition-colors ${tone}`} data-testid="tuner-note">
         {target ? (
           <>

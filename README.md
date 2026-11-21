@@ -28,5 +28,8 @@ src/
   audio/      micro → AudioWorklet (capture) → Web Worker (détection pitchy)
   lib/music/  notes, fréquences, accordages (pur, testé)
   lib/tuner/  détection, lissage, logique de l'accordeur (pur, testé)
+  lib/lessons/ déroulé des leçons, jeux, reconnaissance de note, progression (pur, testé)
+  lib/synth/  son de référence (Karplus-Strong)
+  content/    contenu des leçons en JSON (validé par les tests)
 e2e/          tests Playwright
 ```

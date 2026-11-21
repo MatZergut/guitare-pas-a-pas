@@ -19,3 +19,8 @@ export const TUNING_IDS = Object.keys(TUNINGS) as TuningId[]
 export function stringNumber(index: number): number {
   return 6 - index
 }
+
+/** « 1re », « 2e »… */
+export function ordinal(n: number): string {
+  return n === 1 ? '1re' : `${n}e`
+}

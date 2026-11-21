@@ -11,8 +11,18 @@ const MESSAGES: Partial<Record<MicStatus, { title: string; body: string }>> = {
 }
 
 /** Affiche l'explication / l'état du micro, ou rien quand tout va bien. */
-export function MicGate({ status, onStart }: { status: MicStatus; onStart: () => void }) {
+export function MicGate({ status, onStart, compact = false }: { status: MicStatus; onStart: () => void; compact?: boolean }) {
   if (status === 'listening' || status === 'checking' || status === 'starting') return null
+
+  if (status === 'needs-permission' && compact) {
+    return (
+      <div className="flex items-center gap-3 rounded-2xl border border-border bg-surface p-3">
+        <p className="flex-1 text-sm text-muted">Le micro écoute ta guitare. Rien n’est enregistré ni envoyé.</p>
+        <button type="button" onClick={onStart}
+          className="min-h-12 shrink-0 rounded-xl bg-accent px-4 font-semibold text-bg">Autoriser le micro</button>
+      </div>
+    )
+  }
 
   if (status === 'needs-permission') {
     return (

@@ -1,5 +1,5 @@
 import { midiToNoteName } from '../../lib/music/notes'
-import { stringNumber, type Tuning } from '../../lib/music/tunings'
+import { ordinal, stringNumber, type Tuning } from '../../lib/music/tunings'
 
 interface Props {
   tuning: Tuning
@@ -22,7 +22,7 @@ export function StringSelector({ tuning, active, tuned, onSelect }: Props) {
             type="button"
             onClick={() => onSelect(i)}
             aria-pressed={isActive}
-            aria-label={`${stringNumber(i)}e corde : ${n.fr} (${n.en})${isTuned ? ', accordée' : ''}`}
+            aria-label={`${ordinal(stringNumber(i))} corde : ${n.fr} (${n.en})${isTuned ? ', accordée' : ''}`}
             className={`relative flex min-h-16 flex-col items-center justify-center rounded-xl border text-center transition-colors ${
               isActive ? 'border-accent bg-accent/15' : 'border-border bg-surface active:bg-border/60'
             }`}

@@ -1,0 +1,940 @@
+{
+ "version": 1,
+ "lessons": [
+  {
+   "id": "tenir-la-guitare",
+   "title": "Tenir la guitare",
+   "summary": "La bonne position, le nom des cordes et ta première note.",
+   "minutes": 3,
+   "steps": [
+    {
+     "type": "info",
+     "title": "Bien s'installer",
+     "paragraphs": [
+      "Assieds-toi au bord d'une chaise, le dos droit, les deux pieds à plat.",
+      "Pose le creux de la guitare sur ta cuisse droite. Le manche part vers la gauche, légèrement relevé.",
+      "Ton bras droit repose sur le haut de la caisse : ta main tombe naturellement au-dessus de la rosace (le trou)."
+     ]
+    },
+    {
+     "type": "info",
+     "title": "La main gauche",
+     "paragraphs": [
+      "Le pouce se place derrière le manche, à peu près au milieu, jamais par-dessus.",
+      "Tu appuies sur les cordes avec le bout des doigts, ongles courts, en arrondissant les doigts comme pour tenir une balle.",
+      "Ne serre pas trop : appuie juste assez pour que la note sonne clairement."
+     ]
+    },
+    {
+     "type": "info",
+     "title": "Le nom des cordes",
+     "paragraphs": [
+      "Les cordes sont numérotées de 1 à 6. La 6e est la plus grosse, la plus grave : elle est en haut quand tu tiens la guitare.",
+      "La 1re est la plus fine, la plus aiguë : elle est en bas, près de tes genoux.",
+      "Sur le manche de l'appli, la 6e corde est à gauche et la 1re à droite, comme sur les diagrammes d'accords."
+     ],
+     "show": [
+      {
+       "string": 6,
+       "fret": 0
+      },
+      {
+       "string": 1,
+       "fret": 0
+      }
+     ]
+    },
+    {
+     "type": "play",
+     "title": "Ta première note",
+     "text": "Pince la 6e corde à vide (sans appuyer sur le manche). L'appli t'écoute.",
+     "notes": [
+      {
+       "string": 6,
+       "fret": 0
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "cordes-a-vide",
+   "title": "Les 6 cordes à vide",
+   "summary": "Mi La Ré Sol Si Mi : reconnaître et jouer chaque corde.",
+   "minutes": 4,
+   "steps": [
+    {
+     "type": "info",
+     "title": "Mi La Ré Sol Si Mi",
+     "paragraphs": [
+      "Jouées à vide, les 6 cordes donnent, de la plus grave à la plus aiguë : Mi, La, Ré, Sol, Si, Mi.",
+      "En notation internationale : E, A, D, G, B, E.",
+      "Astuce pour retenir : « Mi La Ré Sol Si Mi » se chante très bien !"
+     ],
+     "show": [
+      {
+       "string": 6,
+       "fret": 0
+      },
+      {
+       "string": 5,
+       "fret": 0
+      },
+      {
+       "string": 4,
+       "fret": 0
+      },
+      {
+       "string": 3,
+       "fret": 0
+      },
+      {
+       "string": 2,
+       "fret": 0
+      },
+      {
+       "string": 1,
+       "fret": 0
+      }
+     ]
+    },
+    {
+     "type": "play",
+     "title": "De la 6e à la 1re",
+     "text": "Joue chaque corde à vide, l'une après l'autre.",
+     "notes": [
+      {
+       "string": 6,
+       "fret": 0
+      },
+      {
+       "string": 5,
+       "fret": 0
+      },
+      {
+       "string": 4,
+       "fret": 0
+      },
+      {
+       "string": 3,
+       "fret": 0
+      },
+      {
+       "string": 2,
+       "fret": 0
+      },
+      {
+       "string": 1,
+       "fret": 0
+      }
+     ]
+    },
+    {
+     "type": "find",
+     "title": "Trouve la corde",
+     "text": "Joue la corde demandée, à vide.",
+     "pool": {
+      "strings": [
+       6,
+       5,
+       4,
+       3,
+       2,
+       1
+      ],
+      "frets": [
+       0,
+       0
+      ]
+     },
+     "rounds": 6
+    },
+    {
+     "type": "name",
+     "title": "Quelle est cette corde ?",
+     "text": "Touche le nom de la corde indiquée.",
+     "pool": {
+      "strings": [
+       6,
+       5,
+       4,
+       3,
+       2,
+       1
+      ],
+      "frets": [
+       0,
+       0
+      ]
+     },
+     "rounds": 6
+    }
+   ]
+  },
+  {
+   "id": "les-cases",
+   "title": "Les cases",
+   "summary": "Appuyer sur une case pour changer de note.",
+   "minutes": 4,
+   "steps": [
+    {
+     "type": "info",
+     "title": "Qu'est-ce qu'une case ?",
+     "paragraphs": [
+      "Le manche est divisé par des barrettes métalliques, les frettes. L'espace entre deux frettes s'appelle une case.",
+      "Appuie juste derrière la frette (côté caisse), pas dessus ni au milieu de la case : le son sera plus net avec moins d'effort.",
+      "Chaque case monte la note d'un demi-ton. Les points sur le manche (cases 3, 5, 7, 9, 12) servent de repères."
+     ]
+    },
+    {
+     "type": "info",
+     "title": "Les dièses (♯)",
+     "paragraphs": [
+      "Entre certaines notes, il existe une note intermédiaire : le dièse, noté ♯. Fa♯ se dit « Fa dièse ».",
+      "Sur la 6e corde : à vide c'est Mi, case 1 Fa, case 2 Fa♯, case 3 Sol."
+     ],
+     "show": [
+      {
+       "string": 6,
+       "fret": 0
+      },
+      {
+       "string": 6,
+       "fret": 1
+      },
+      {
+       "string": 6,
+       "fret": 2
+      },
+      {
+       "string": 6,
+       "fret": 3
+      }
+     ]
+    },
+    {
+     "type": "play",
+     "title": "Sur la 6e corde",
+     "text": "Joue la corde à vide, puis les cases 1, 2 et 3 avec l'index, le majeur et l'annulaire.",
+     "notes": [
+      {
+       "string": 6,
+       "fret": 0
+      },
+      {
+       "string": 6,
+       "fret": 1
+      },
+      {
+       "string": 6,
+       "fret": 2
+      },
+      {
+       "string": 6,
+       "fret": 3
+      }
+     ]
+    },
+    {
+     "type": "play",
+     "title": "Sur la 5e corde",
+     "text": "Même exercice sur la corde de La.",
+     "notes": [
+      {
+       "string": 5,
+       "fret": 0
+      },
+      {
+       "string": 5,
+       "fret": 1
+      },
+      {
+       "string": 5,
+       "fret": 2
+      },
+      {
+       "string": 5,
+       "fret": 3
+      }
+     ]
+    },
+    {
+     "type": "play",
+     "title": "Et à l'envers",
+     "text": "Redescends sur la 6e corde, de la case 3 jusqu'à la corde à vide.",
+     "notes": [
+      {
+       "string": 6,
+       "fret": 3
+      },
+      {
+       "string": 6,
+       "fret": 2
+      },
+      {
+       "string": 6,
+       "fret": 1
+      },
+      {
+       "string": 6,
+       "fret": 0
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "notes-corde-mi",
+   "title": "Les notes sur la corde de Mi",
+   "summary": "Do Ré Mi Fa Sol La Si sur la 6e corde, jusqu'à la case 12.",
+   "minutes": 5,
+   "steps": [
+    {
+     "type": "info",
+     "title": "Les notes naturelles",
+     "paragraphs": [
+      "Les 7 notes naturelles sont Do, Ré, Mi, Fa, Sol, La, Si (C D E F G A B).",
+      "Entre deux notes naturelles il y a en général 2 cases, sauf entre Mi et Fa, et entre Si et Do : une seule case.",
+      "Case 12, on retrouve la note à vide, une octave plus haut."
+     ],
+     "show": [
+      {
+       "string": 6,
+       "fret": 0
+      },
+      {
+       "string": 6,
+       "fret": 1
+      },
+      {
+       "string": 6,
+       "fret": 3
+      },
+      {
+       "string": 6,
+       "fret": 5
+      },
+      {
+       "string": 6,
+       "fret": 7
+      },
+      {
+       "string": 6,
+       "fret": 8
+      },
+      {
+       "string": 6,
+       "fret": 10
+      },
+      {
+       "string": 6,
+       "fret": 12
+      }
+     ]
+    },
+    {
+     "type": "play",
+     "title": "Monte la corde de Mi",
+     "text": "Joue les notes naturelles de la 6e corde, de la corde à vide à la case 12.",
+     "notes": [
+      {
+       "string": 6,
+       "fret": 0
+      },
+      {
+       "string": 6,
+       "fret": 1
+      },
+      {
+       "string": 6,
+       "fret": 3
+      },
+      {
+       "string": 6,
+       "fret": 5
+      },
+      {
+       "string": 6,
+       "fret": 7
+      },
+      {
+       "string": 6,
+       "fret": 8
+      },
+      {
+       "string": 6,
+       "fret": 10
+      },
+      {
+       "string": 6,
+       "fret": 12
+      }
+     ]
+    },
+    {
+     "type": "find",
+     "title": "Trouve la note",
+     "text": "Joue la note demandée sur la 6e corde.",
+     "pool": {
+      "strings": [
+       6
+      ],
+      "frets": [
+       0,
+       12
+      ],
+      "naturalOnly": true
+     },
+     "rounds": 8
+    }
+   ]
+  },
+  {
+   "id": "notes-corde-la",
+   "title": "Les notes sur la corde de La",
+   "summary": "Les notes naturelles de la 5e corde.",
+   "minutes": 5,
+   "steps": [
+    {
+     "type": "info",
+     "title": "Même logique, autre départ",
+     "paragraphs": [
+      "La 5e corde commence sur La. Les notes suivent le même ordre : La, Si, Do, Ré, Mi, Fa, Sol, La.",
+      "Rappel : une seule case entre Si et Do, et entre Mi et Fa."
+     ],
+     "show": [
+      {
+       "string": 5,
+       "fret": 0
+      },
+      {
+       "string": 5,
+       "fret": 2
+      },
+      {
+       "string": 5,
+       "fret": 3
+      },
+      {
+       "string": 5,
+       "fret": 5
+      },
+      {
+       "string": 5,
+       "fret": 7
+      },
+      {
+       "string": 5,
+       "fret": 8
+      },
+      {
+       "string": 5,
+       "fret": 10
+      },
+      {
+       "string": 5,
+       "fret": 12
+      }
+     ]
+    },
+    {
+     "type": "play",
+     "title": "Monte la corde de La",
+     "text": "Joue les notes naturelles de la 5e corde.",
+     "notes": [
+      {
+       "string": 5,
+       "fret": 0
+      },
+      {
+       "string": 5,
+       "fret": 2
+      },
+      {
+       "string": 5,
+       "fret": 3
+      },
+      {
+       "string": 5,
+       "fret": 5
+      },
+      {
+       "string": 5,
+       "fret": 7
+      },
+      {
+       "string": 5,
+       "fret": 8
+      },
+      {
+       "string": 5,
+       "fret": 10
+      },
+      {
+       "string": 5,
+       "fret": 12
+      }
+     ]
+    },
+    {
+     "type": "find",
+     "title": "Trouve la note",
+     "text": "Joue la note demandée sur la 5e corde.",
+     "pool": {
+      "strings": [
+       5
+      ],
+      "frets": [
+       0,
+       12
+      ],
+      "naturalOnly": true
+     },
+     "rounds": 8
+    }
+   ]
+  },
+  {
+   "id": "jeu-mi-la",
+   "title": "Jeu : cordes de Mi et de La",
+   "summary": "Révise les deux cordes graves en jouant.",
+   "minutes": 4,
+   "steps": [
+    {
+     "type": "name",
+     "title": "Quelle est cette note ?",
+     "text": "Touche le nom de la note indiquée sur le manche.",
+     "pool": {
+      "strings": [
+       6,
+       5
+      ],
+      "frets": [
+       0,
+       12
+      ],
+      "naturalOnly": true
+     },
+     "rounds": 10
+    },
+    {
+     "type": "find",
+     "title": "Trouve la note",
+     "text": "Joue la note demandée sur la bonne corde.",
+     "pool": {
+      "strings": [
+       6,
+       5
+      ],
+      "frets": [
+       0,
+       12
+      ],
+      "naturalOnly": true
+     },
+     "rounds": 8
+    }
+   ]
+  },
+  {
+   "id": "cordes-re-sol",
+   "title": "Les cordes de Ré et de Sol",
+   "summary": "Les notes naturelles des 4e et 3e cordes.",
+   "minutes": 5,
+   "steps": [
+    {
+     "type": "info",
+     "title": "Les cordes du milieu",
+     "paragraphs": [
+      "La 4e corde commence sur Ré, la 3e sur Sol.",
+      "Sur la corde de Sol, Si est en case 4 et Do en case 5 : ces deux notes sont collées."
+     ],
+     "show": [
+      {
+       "string": 4,
+       "fret": 0
+      },
+      {
+       "string": 4,
+       "fret": 2
+      },
+      {
+       "string": 4,
+       "fret": 3
+      },
+      {
+       "string": 4,
+       "fret": 5
+      },
+      {
+       "string": 4,
+       "fret": 7
+      },
+      {
+       "string": 4,
+       "fret": 9
+      },
+      {
+       "string": 4,
+       "fret": 10
+      },
+      {
+       "string": 4,
+       "fret": 12
+      },
+      {
+       "string": 3,
+       "fret": 0
+      },
+      {
+       "string": 3,
+       "fret": 2
+      },
+      {
+       "string": 3,
+       "fret": 4
+      },
+      {
+       "string": 3,
+       "fret": 5
+      },
+      {
+       "string": 3,
+       "fret": 7
+      },
+      {
+       "string": 3,
+       "fret": 9
+      },
+      {
+       "string": 3,
+       "fret": 10
+      },
+      {
+       "string": 3,
+       "fret": 12
+      }
+     ]
+    },
+    {
+     "type": "play",
+     "title": "Monte la corde de Ré",
+     "notes": [
+      {
+       "string": 4,
+       "fret": 0
+      },
+      {
+       "string": 4,
+       "fret": 2
+      },
+      {
+       "string": 4,
+       "fret": 3
+      },
+      {
+       "string": 4,
+       "fret": 5
+      },
+      {
+       "string": 4,
+       "fret": 7
+      },
+      {
+       "string": 4,
+       "fret": 9
+      },
+      {
+       "string": 4,
+       "fret": 10
+      },
+      {
+       "string": 4,
+       "fret": 12
+      }
+     ]
+    },
+    {
+     "type": "play",
+     "title": "Monte la corde de Sol",
+     "notes": [
+      {
+       "string": 3,
+       "fret": 0
+      },
+      {
+       "string": 3,
+       "fret": 2
+      },
+      {
+       "string": 3,
+       "fret": 4
+      },
+      {
+       "string": 3,
+       "fret": 5
+      },
+      {
+       "string": 3,
+       "fret": 7
+      },
+      {
+       "string": 3,
+       "fret": 9
+      },
+      {
+       "string": 3,
+       "fret": 10
+      },
+      {
+       "string": 3,
+       "fret": 12
+      }
+     ]
+    },
+    {
+     "type": "find",
+     "title": "Trouve la note",
+     "text": "Joue la note demandée sur la bonne corde.",
+     "pool": {
+      "strings": [
+       4,
+       3
+      ],
+      "frets": [
+       0,
+       12
+      ],
+      "naturalOnly": true
+     },
+     "rounds": 8
+    }
+   ]
+  },
+  {
+   "id": "cordes-si-mi",
+   "title": "Les cordes de Si et de Mi aigu",
+   "summary": "Les notes naturelles des 2e et 1re cordes.",
+   "minutes": 5,
+   "steps": [
+    {
+     "type": "info",
+     "title": "Les cordes aiguës",
+     "paragraphs": [
+      "La 2e corde commence sur Si : Do est juste à la case 1.",
+      "La 1re corde est un Mi, comme la 6e mais deux octaves plus haut : les notes sont aux mêmes cases !"
+     ],
+     "show": [
+      {
+       "string": 2,
+       "fret": 0
+      },
+      {
+       "string": 2,
+       "fret": 1
+      },
+      {
+       "string": 2,
+       "fret": 3
+      },
+      {
+       "string": 2,
+       "fret": 5
+      },
+      {
+       "string": 2,
+       "fret": 6
+      },
+      {
+       "string": 2,
+       "fret": 8
+      },
+      {
+       "string": 2,
+       "fret": 10
+      },
+      {
+       "string": 2,
+       "fret": 12
+      },
+      {
+       "string": 1,
+       "fret": 0
+      },
+      {
+       "string": 1,
+       "fret": 1
+      },
+      {
+       "string": 1,
+       "fret": 3
+      },
+      {
+       "string": 1,
+       "fret": 5
+      },
+      {
+       "string": 1,
+       "fret": 7
+      },
+      {
+       "string": 1,
+       "fret": 8
+      },
+      {
+       "string": 1,
+       "fret": 10
+      },
+      {
+       "string": 1,
+       "fret": 12
+      }
+     ]
+    },
+    {
+     "type": "play",
+     "title": "Monte la corde de Si",
+     "notes": [
+      {
+       "string": 2,
+       "fret": 0
+      },
+      {
+       "string": 2,
+       "fret": 1
+      },
+      {
+       "string": 2,
+       "fret": 3
+      },
+      {
+       "string": 2,
+       "fret": 5
+      },
+      {
+       "string": 2,
+       "fret": 6
+      },
+      {
+       "string": 2,
+       "fret": 8
+      },
+      {
+       "string": 2,
+       "fret": 10
+      },
+      {
+       "string": 2,
+       "fret": 12
+      }
+     ]
+    },
+    {
+     "type": "play",
+     "title": "Monte la corde de Mi aigu",
+     "notes": [
+      {
+       "string": 1,
+       "fret": 0
+      },
+      {
+       "string": 1,
+       "fret": 1
+      },
+      {
+       "string": 1,
+       "fret": 3
+      },
+      {
+       "string": 1,
+       "fret": 5
+      },
+      {
+       "string": 1,
+       "fret": 7
+      },
+      {
+       "string": 1,
+       "fret": 8
+      },
+      {
+       "string": 1,
+       "fret": 10
+      },
+      {
+       "string": 1,
+       "fret": 12
+      }
+     ]
+    },
+    {
+     "type": "find",
+     "title": "Trouve la note",
+     "text": "Joue la note demandée sur la bonne corde.",
+     "pool": {
+      "strings": [
+       2,
+       1
+      ],
+      "frets": [
+       0,
+       12
+      ],
+      "naturalOnly": true
+     },
+     "rounds": 8
+    }
+   ]
+  },
+  {
+   "id": "tout-le-manche",
+   "title": "Tout le manche",
+   "summary": "Le grand défi : les notes naturelles sur les 6 cordes.",
+   "minutes": 5,
+   "steps": [
+    {
+     "type": "name",
+     "title": "Quelle est cette note ?",
+     "text": "Touche le nom de la note indiquée.",
+     "pool": {
+      "strings": [
+       6,
+       5,
+       4,
+       3,
+       2,
+       1
+      ],
+      "frets": [
+       0,
+       12
+      ],
+      "naturalOnly": true
+     },
+     "rounds": 12
+    },
+    {
+     "type": "find",
+     "title": "Trouve la note",
+     "text": "Joue la note demandée sur la bonne corde.",
+     "pool": {
+      "strings": [
+       6,
+       5,
+       4,
+       3,
+       2,
+       1
+      ],
+      "frets": [
+       0,
+       12
+      ],
+      "naturalOnly": true
+     },
+     "rounds": 10
+    }
+   ]
+  }
+ ]
+}

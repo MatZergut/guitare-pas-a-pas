@@ -5,6 +5,7 @@ import TunerPage from '../pages/TunerPage'
 import LearnPage from '../pages/LearnPage'
 import SongsPage from '../pages/SongsPage'
 import ProgressPage from '../pages/ProgressPage'
+import LessonPage from '../pages/LessonPage'
 
 function Layout() {
   return (
@@ -19,6 +20,8 @@ function Layout() {
 export function AppRoutes() {
   return (
     <Routes>
+      {/* Leçon en plein écran, sans barre d'onglets */}
+      <Route path="apprendre/:lessonId" element={<LessonPage />} />
       <Route element={<Layout />}>
         <Route index element={<Navigate to="/accorder" replace />} />
         <Route path="accorder" element={<TunerPage />} />
