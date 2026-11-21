@@ -24,6 +24,8 @@ src/
   pages/      un écran par onglet (Accorder, Apprendre, Morceaux, Progrès)
   db/         schéma IndexedDB (Dexie) : progression, morceaux importés, scores, réglages
   stores/     état Zustand (réglages persistés dans IndexedDB)
-  lib/        logique audio/musique pure et testée (phases suivantes)
+  audio/      micro → AudioWorklet (capture) → Web Worker (détection pitchy)
+  lib/music/  notes, fréquences, accordages (pur, testé)
+  lib/tuner/  détection, lissage, logique de l'accordeur (pur, testé)
 e2e/          tests Playwright
 ```

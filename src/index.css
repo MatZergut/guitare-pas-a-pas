@@ -22,6 +22,9 @@
     --c-text: #16181d;
     --c-muted: #5d6573;
     --c-accent: #b86e00;
+    --c-ok: #15803d;
+    --c-warn: #b45309;
+    --c-bad: #dc2626;
     color-scheme: light;
   }
 }
