@@ -18,7 +18,7 @@ const MUSICXML = `<?xml version="1.0" encoding="UTF-8"?>
 test('bibliothèque classée par niveau', async ({ page }) => {
   await page.goto('/morceaux')
   for (let l = 1; l <= 5; l++) await expect(page.getByRole('heading', { name: new RegExp(`^Niveau ${l}`) })).toBeVisible()
-  await expect(page.getByRole('region', { name: /Niveau 1/ }).getByRole('link')).toHaveCount(2)
+  await expect(page.getByRole('region', { name: /Niveau 1/ }).getByRole('link')).toHaveCount(4)
 })
 
 test('lecture d’un morceau : tablature affichée, curseur qui avance', async ({ page }) => {

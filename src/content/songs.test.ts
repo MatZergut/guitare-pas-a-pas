@@ -7,10 +7,10 @@ import { BUILTIN_SONGS, builtinTex } from './songs'
 const load = (id: string) => importer.ScoreLoader.loadAlphaTex(builtinTex(id)!)
 
 describe('morceaux intégrés', () => {
-  it('9 morceaux, niveaux 1 à 5 tous représentés, identifiants uniques', () => {
-    expect(BUILTIN_SONGS).toHaveLength(9)
-    expect(new Set(BUILTIN_SONGS.map((s) => s.level))).toEqual(new Set([1, 2, 3, 4, 5]))
-    expect(new Set(BUILTIN_SONGS.map((s) => s.id)).size).toBe(9)
+  it('20 morceaux : exactement 4 par niveau, identifiants uniques', () => {
+    expect(BUILTIN_SONGS).toHaveLength(20)
+    for (let l = 1; l <= 5; l++) expect(BUILTIN_SONGS.filter((s) => s.level === l), `niveau ${l}`).toHaveLength(4)
+    expect(new Set(BUILTIN_SONGS.map((s) => s.id)).size).toBe(20)
   })
 
   for (const song of BUILTIN_SONGS) {
@@ -32,6 +32,17 @@ describe('morceaux intégrés', () => {
       })
     })
   }
+
+  const melody = (id: string, bars: number) =>
+    load(id).tracks[0].staves[0].bars.slice(0, bars).flatMap((b) => b.voices[0].beats).filter((b) => !b.isRest).map((b) => b.notes[0].realValue)
+
+  it('début de « Lettre à Élise » : Mi Ré♯ Mi Ré♯ Mi Si Ré Do La', () => {
+    expect(melody('lettre-a-elise', 3).slice(0, 9)).toEqual([64, 63, 64, 63, 64, 59, 62, 60, 57])
+  })
+
+  it('début de « Ah ! vous dirai-je, maman » : Sol Sol Ré Ré Mi Mi Ré (en Sol)', () => {
+    expect(melody('ah-vous-dirai-je-maman', 2)).toEqual([55, 55, 62, 62, 64, 64, 62])
+  })
 
   it('mélodie d’« Au clair de la lune » : Do Do Do Ré Mi Ré', () => {
     const beats = load('au-clair-de-la-lune').tracks[0].staves[0].bars.slice(0, 2).flatMap((b) => b.voices[0].beats)

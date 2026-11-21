@@ -1,14 +1,145 @@
 {
  "version": 1,
  "songs": [
-  { "id": "au-clair-de-la-lune", "title": "Au clair de la lune", "composer": "Traditionnel", "style": "Chanson française", "level": 1 },
-  { "id": "frere-jacques", "title": "Frère Jacques", "composer": "Traditionnel", "style": "Chanson française", "level": 1 },
-  { "id": "ode-a-la-joie", "title": "Ode à la joie", "composer": "Ludwig van Beethoven", "style": "Classique", "level": 2 },
-  { "id": "amazing-grace", "title": "Amazing Grace", "composer": "Traditionnel", "style": "Balade", "level": 2 },
-  { "id": "when-the-saints", "title": "When the Saints Go Marching In", "composer": "Traditionnel", "style": "Rock'n'roll", "level": 3 },
-  { "id": "ballade-la-mineur", "title": "Ballade en La mineur", "composer": "Création originale", "style": "Balade", "level": 3 },
-  { "id": "greensleeves", "title": "Greensleeves", "composer": "Traditionnel anglais", "style": "Balade", "level": 4 },
-  { "id": "riff-rock-mi", "title": "Riff rock en Mi", "composer": "Création originale", "style": "Rock", "level": 4 },
-  { "id": "blues-la", "title": "Blues en La", "composer": "Création originale", "style": "Blues", "level": 5 }
+  {
+   "id": "au-clair-de-la-lune",
+   "title": "Au clair de la lune",
+   "composer": "Traditionnel",
+   "style": "Chanson française",
+   "level": 1
+  },
+  {
+   "id": "frere-jacques",
+   "title": "Frère Jacques",
+   "composer": "Traditionnel",
+   "style": "Chanson française",
+   "level": 1
+  },
+  {
+   "id": "ah-vous-dirai-je-maman",
+   "title": "Ah ! vous dirai-je, maman",
+   "composer": "Traditionnel",
+   "style": "Chanson française",
+   "level": 1
+  },
+  {
+   "id": "mary-had-a-little-lamb",
+   "title": "Mary Had a Little Lamb",
+   "composer": "Traditionnel américain",
+   "style": "Comptine",
+   "level": 1
+  },
+  {
+   "id": "ode-a-la-joie",
+   "title": "Ode à la joie",
+   "composer": "Ludwig van Beethoven",
+   "style": "Classique",
+   "level": 2
+  },
+  {
+   "id": "amazing-grace",
+   "title": "Amazing Grace",
+   "composer": "Traditionnel",
+   "style": "Balade",
+   "level": 2
+  },
+  {
+   "id": "jingle-bells",
+   "title": "Jingle Bells",
+   "composer": "James Lord Pierpont",
+   "style": "Chanson",
+   "level": 2
+  },
+  {
+   "id": "row-row-row-your-boat",
+   "title": "Row, Row, Row Your Boat",
+   "composer": "Traditionnel",
+   "style": "Comptine",
+   "level": 2
+  },
+  {
+   "id": "when-the-saints",
+   "title": "When the Saints Go Marching In",
+   "composer": "Traditionnel",
+   "style": "Rock'n'roll",
+   "level": 3
+  },
+  {
+   "id": "ballade-la-mineur",
+   "title": "Ballade en La mineur",
+   "composer": "Création originale",
+   "style": "Balade",
+   "level": 3
+  },
+  {
+   "id": "valse-en-sol",
+   "title": "Valse en Sol",
+   "composer": "Création originale",
+   "style": "Balade",
+   "level": 3
+  },
+  {
+   "id": "rocknroll-en-la",
+   "title": "Rock'n'roll en La",
+   "composer": "Création originale",
+   "style": "Rock'n'roll",
+   "level": 3
+  },
+  {
+   "id": "greensleeves",
+   "title": "Greensleeves",
+   "composer": "Traditionnel anglais",
+   "style": "Balade",
+   "level": 4
+  },
+  {
+   "id": "riff-rock-mi",
+   "title": "Riff rock en Mi",
+   "composer": "Création originale",
+   "style": "Rock",
+   "level": 4
+  },
+  {
+   "id": "romance-mi-mineur",
+   "title": "Romance en Mi mineur",
+   "composer": "Création originale",
+   "style": "Balade",
+   "level": 4
+  },
+  {
+   "id": "riff-rock-re",
+   "title": "Riff rock en Ré",
+   "composer": "Création originale",
+   "style": "Rock",
+   "level": 4
+  },
+  {
+   "id": "blues-la",
+   "title": "Blues en La",
+   "composer": "Création originale",
+   "style": "Blues",
+   "level": 5
+  },
+  {
+   "id": "lettre-a-elise",
+   "title": "Lettre à Élise",
+   "composer": "Ludwig van Beethoven",
+   "style": "Classique",
+   "level": 5
+  },
+  {
+   "id": "blues-mi",
+   "title": "Blues en Mi",
+   "composer": "Création originale",
+   "style": "Blues",
+   "level": 5
+  },
+  {
+   "id": "etude-arpeges-do",
+   "title": "Étude en arpèges en Do",
+   "composer": "Création originale",
+   "style": "Classique",
+   "level": 5
+  }
  ]
 }
