@@ -9,9 +9,11 @@ export interface Settings {
   tuningId: TuningId
   /** Latence audio aller-retour mesurée sur CET appareil (ms), null = non calibrée. */
   latencyMs: number | null
+  /** Seuil « en avance / en retard » de l'analyse de jeu (ms). */
+  timingToleranceMs: number
 }
 
-export const DEFAULT_SETTINGS: Settings = { a4Hz: 440, tuningId: 'standard', latencyMs: null }
+export const DEFAULT_SETTINGS: Settings = { a4Hz: 440, tuningId: 'standard', latencyMs: null, timingToleranceMs: 80 }
 
 /** Bornes raisonnables du diapason (baroque 415 → orchestre moderne 446). */
 export const A4_MIN = 415

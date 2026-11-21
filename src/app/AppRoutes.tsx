@@ -10,6 +10,7 @@ import LessonPage from '../pages/LessonPage'
 
 // alphaTab est volumineux : téléchargé seulement à l'ouverture d'un morceau.
 const SongPage = lazy(() => import('../pages/SongPage'))
+const CalibrationPage = lazy(() => import('../pages/CalibrationPage'))
 
 function Layout() {
   return (
@@ -26,6 +27,7 @@ export function AppRoutes() {
     <Routes>
       {/* Leçon en plein écran, sans barre d'onglets */}
       <Route path="apprendre/:lessonId" element={<LessonPage />} />
+      <Route path="calibration" element={<Suspense fallback={<p className="p-6 text-muted">Chargement…</p>}><CalibrationPage /></Suspense>} />
       <Route path="morceaux/:songId" element={<Suspense fallback={<p className="p-6 text-muted">Chargement…</p>}><SongPage /></Suspense>} />
       <Route element={<Layout />}>
         <Route index element={<Navigate to="/accorder" replace />} />

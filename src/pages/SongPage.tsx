@@ -22,8 +22,8 @@ export default function SongPage() {
     return bytes ? { kind: 'bytes', data: bytes } : null
   }, [builtin, bytes])
 
-  if (builtin) return <SongPlayer title={builtin.title} subtitle={`${builtin.composer} · ${builtin.style}`} source={source!} />
+  if (builtin) return <SongPlayer songId={builtin.id} title={builtin.title} subtitle={`${builtin.composer} · ${builtin.style}`} source={source!} />
   if (imported === undefined) return <Navigate to="/morceaux" replace />
   if (!imported || !source) return <p className="p-6 text-muted">Chargement…</p>
-  return <SongPlayer title={imported.title} subtitle={imported.artist} source={source} />
+  return <SongPlayer songId={imported.id} title={imported.title} subtitle={imported.artist} source={source} />
 }

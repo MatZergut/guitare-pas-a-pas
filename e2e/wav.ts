@@ -2,7 +2,7 @@ import { mkdirSync, writeFileSync } from 'node:fs'
 import { join } from 'node:path'
 
 /** Écrit un WAV mono 16 bits « type guitare » pour le faux micro de Chrome. */
-export function writeGuitarWav(name: string, freq: number, seconds = 4, sampleRate = 48000, { plucked = false } = {}): string {
+export function writeGuitarWav(name: string, freq: number, seconds = 4, sampleRate = 48000, { plucked = false, period = 1.5 } = {}): string {
   const n = Math.floor(seconds * sampleRate)
   const data = Buffer.alloc(n * 2)
   const harmonics = [1, 0.8, 0.5, 0.35, 0.2, 0.1]
@@ -10,8 +10,8 @@ export function writeGuitarWav(name: string, freq: number, seconds = 4, sampleRa
     let v = 0
     harmonics.forEach((a, k) => (v += a * Math.sin((2 * Math.PI * freq * (k + 1) * i) / sampleRate + k)))
     // Mode « pincé » : note de 1 s qui s'éteint, puis 0,5 s de silence, en boucle.
-    const tc = (i / sampleRate) % 1.5
-    const env = !plucked ? 1 : tc < 1 ? Math.exp(-2.5 * tc) : 0
+    const tc = (i / sampleRate) % period
+    const env = !plucked ? 1 : tc < period * 0.66 ? Math.exp((-2.5 * tc) / (period / 1.5)) : 0
     data.writeInt16LE(Math.round((v / harmonics.length) * 0.4 * env * 32767), i * 2)
   }
   const h = Buffer.alloc(44)

@@ -17,6 +17,8 @@
   },
   "dependencies": {
     "@coderline/alphatab": "^1.9.0",
+    "@spotify/basic-pitch": "^1.0.1",
+    "@tensorflow/tfjs-backend-wasm": "^3.21.0",
     "dexie": "^4.4.7",
     "dexie-react-hooks": "^4.4.0",
     "pitchy": "^4.1.0",

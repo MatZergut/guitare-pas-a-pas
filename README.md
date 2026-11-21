@@ -30,6 +30,9 @@ src/
   lib/tuner/  détection, lissage, logique de l'accordeur (pur, testé)
   lib/lessons/ déroulé des leçons, jeux, reconnaissance de note, progression (pur, testé)
   lib/synth/  son de référence (Karplus-Strong)
+  lib/analysis/ analyse de jeu : nettoyage, alignement DP 2 passes, verdicts, score (pur, testé)
+  audio/recorder.ts + transcribe.worker.ts : enregistrement brut, transcription Basic Pitch
+              (TensorFlow.js, moteur WebAssembly SIMD) dans un Web Worker
   lib/songs/  partitions : durées des mesures, boucle A–B, tablature calculée, import (pur, testé)
   content/    contenu des leçons (JSON) et morceaux intégrés (alphaTex), validés par les tests
   components/player/ lecteur de tablature alphaTab (chargé à la demande)
